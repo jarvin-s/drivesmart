@@ -21,3 +21,8 @@
     transition: 300ms ease-in-out;
     color: white !important;
 }
+
+.stripcard {
+    color: black;
+    background-color: rgb(224, 224, 21);
+}
