@@ -14,9 +14,12 @@
 }
 
 .edit-btn {
+    background-color: #808000!important;
     color: white!important;
 }
 
-#lessonblock-table {
-    background-color: yellow!important;
+.edit-btn:hover {
+    background-color: #696901!important;
+    transition: 300ms ease-in-out;
+    color: white!important;
 }
