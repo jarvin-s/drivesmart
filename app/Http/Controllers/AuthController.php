@@ -28,7 +28,6 @@ class AuthController extends Controller
             // };
 
         } else {
-            dd($email, $wachtwoord);
             return redirect()->back()->withErrors(['error' => 'E-mailadres of wachtwoord is onjuist.']);
         }
     }
