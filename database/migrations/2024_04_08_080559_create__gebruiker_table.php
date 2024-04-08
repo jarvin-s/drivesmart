@@ -10,10 +10,10 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('_gebruiker', function (Blueprint $table) {
+        Schema::create('gebruiker', function (Blueprint $table) {
             $table->integer('id', true)->primary()->unsigned();
-            $table->integer('role', 30);
-            $table->integer('voornaam', 100);
+            $table->string('role', 30);
+            $table->string('voornaam', 100);
             $table->string('adres', 100);
             $table->string('postcode', 6);
             $table->string('woonplaats', 30);

@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_strippenkaart', function (Blueprint $table) {
+        Schema::create('strippenkaart', function (Blueprint $table) {
             $table->integer('id', true)->primary()->unsigned();
             $table->integer('student_id')->unsigned();
-            $table->foreign('student_id')->references('id')->on('Leerling')->onDelete('cascade');
+            $table->foreign('student_id')->references('id')->on('leerling')->onDelete('cascade');
             $table->integer('aantal_lessen');
+            $table->integer('reseterende_lessen');
             $table->timestamps();
         });
     }

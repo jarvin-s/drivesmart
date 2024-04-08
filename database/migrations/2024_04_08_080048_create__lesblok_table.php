@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_lesblok', function (Blueprint $table) {
+        Schema::create('lesblok', function (Blueprint $table) {
             $table->integer('id', true)->primary()->unsigned();
             $table->integer('instructeur_id')->unsigned();
             $table->foreign('instructeur_id')->references('id')->on('Instructeur')->onDelete('cascade');

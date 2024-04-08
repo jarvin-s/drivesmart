@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_auto', function (Blueprint $table) {
-            $table->id();
+        Schema::create('instructeur', function (Blueprint $table) {
+            $table->integer('id', true)->primary()->unsigned();
+            $table->string('voornaam', 50);
+            $table->string('achternaam', 70);
+            $table->string('wachtwoord', 255);
+            $table->boolean('is_instructeur')->default(true);
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_auto');
+        Schema::dropIfExists('_instructeur');
     }
 };
