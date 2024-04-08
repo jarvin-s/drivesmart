@@ -9,7 +9,7 @@
                 <div class="col-12 mb-3">
                     <label for="name" class="form-label ">Leerling</label>
                     <div class="input-group">
-                        <select name="student_id" class="form-control" id="type">
+                        <select name="student_id" class="form-select" id="type">
                             @foreach ($students as $student)
                                 <option value="{{ $student->id }}">
                                     {{ $student->voornaam }}
