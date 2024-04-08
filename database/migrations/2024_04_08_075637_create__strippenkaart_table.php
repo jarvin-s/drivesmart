@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('student_id')->unsigned();
             $table->foreign('student_id')->references('id')->on('leerling')->onDelete('cascade');
             $table->integer('aantal_lessen');
-            $table->integer('reseterende_lessen');
+            $table->integer('resterende_lessen');
             $table->timestamps();
         });
     }
