@@ -23,7 +23,7 @@
                                 <tr>
                                     <td>{{ $lessonblock->instructor->voornaam }}</td>
                                     <td>{{ $lessonblock->auto_kenteken }}</td>
-                                    <td>{{ $lessonblock->datum }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($lessonblock->datum)->format('d-m-Y') }}</td>
                                     <td>{{ $lessonblock->tijdblok }}</td>
                                     <td>{{ $lessonblock->leerling_id }}</td>
 

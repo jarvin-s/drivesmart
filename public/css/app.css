@@ -1,25 +1,23 @@
 .logout {
     background-color: #808000 !important;
-    border-radius: 10px 10px 10px 10px;
-    padding: 12px 18px;
     text-decoration: none !important;
     display: inline-block;
-    color: white;
+    color: white !important;
 }
 
 .logout:hover {
     background-color: #696901 !important;
     transition: 300ms ease-in-out;
-    color: white;
+    color: white !important;
 }
 
 .edit-btn {
-    background-color: #808000!important;
-    color: white!important;
+    background-color: #808000 !important;
+    color: white !important;
 }
 
 .edit-btn:hover {
-    background-color: #696901!important;
+    background-color: #696901 !important;
     transition: 300ms ease-in-out;
-    color: white!important;
+    color: white !important;
 }
