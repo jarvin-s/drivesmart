@@ -13,8 +13,8 @@ class StripCardController extends Controller
      */
     public function index()
     {
-        $stripcards = StripCard::wth('leerling')->get();
-        return view('instructors.stripcards.create', compact('stripcards'));
+        $stripcards = StripCard::with('student')->get();
+        return view('instructors.stripcards.index', compact('stripcards'));
     }
 
     /**
