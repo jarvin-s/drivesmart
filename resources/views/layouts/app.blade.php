@@ -9,7 +9,7 @@
 
     {{-- favicon --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
-    
+
     {{-- css --}}
     <link rel="stylesheet" href={{ asset('css/app.css') }}>
 
@@ -70,12 +70,14 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{ route('home') }}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('instructors.index') }}">Instructeurs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('stripcards.index') }}">Strippenkaarten</a>
-                    </li>
+                    @if (Auth::user()->rol->id == '2' || Auth::user()->rol->id == '1')
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('instructors.index') }}">Instructeurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('stripcards.index') }}">Strippenkaarten</a>
+                        </li>
+                    @endif
                     {{-- <li class="nav-item dropdown">
                         <a class="nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown"
                             href="#">Instructeur</a>
@@ -89,7 +91,7 @@
                         </ul>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="">Contact</a>
+                        <a class="nav-link text-white" href="{{ route('contact') }}">Contact</a>
                     </li>
                 </ul>
             </div>

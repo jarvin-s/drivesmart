@@ -12,4 +12,8 @@ class User extends Authenticatable
 
     protected $table = 'gebruiker';
 
+    public function rol()
+    {
+        return $this->hasOne(UserRole::class, 'id', 'rol_id');
+    }
 }
