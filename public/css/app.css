@@ -1,3 +1,8 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
 .logout {
     background-color: #808000 !important;
     text-decoration: none !important;
