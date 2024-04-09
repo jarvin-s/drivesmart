@@ -6,7 +6,7 @@
             <div class="col-lg-12 col-md-10">
                 <div class="bg-white mt-5 p-3">
                     <h2 class="fw-bold mb-4">Ingeplande lessen</h2>
-                    <table id="lessonblock-table" class="table table-striped table-bordered table-responsive">
+                    <table id="lessonblocks-table" class="table table-striped table-bordered table-responsive">
                         <thead>
                             <tr>
                                 <th class="col-2">Instructeur</th>

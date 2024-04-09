@@ -52,3 +52,7 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.table thead th {
+    background-color: rgb(224, 224, 21);
+}

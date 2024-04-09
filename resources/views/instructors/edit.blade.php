@@ -49,7 +49,7 @@
 
                 <div class="col-12 mb-3">
                     <label for="verslag" class="verslag-label form-label">Verslag/opmerkingen*</label>
-                    <textarea name="verslag" class="form-control" placeholder="Schrijf hier uw verslag." required title="TEST"></textarea>
+                    <textarea name="verslag" class="form-control" placeholder="Schrijf hier uw verslag." required></textarea>
                 </div>
 
                 <div class="col">
