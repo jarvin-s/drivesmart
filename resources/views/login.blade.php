@@ -57,14 +57,14 @@
                                     <h1 class="h3 mb-3">Welkom bij Rijschool <span class="brand-text">
                                             <span class="text-white">Drive</span><span
                                                 class="smart-text">Smart</span>!</span></h1>
+                                    <p>U kunt zich hieronder inloggen.</p>
                                     <label for="inputEmail">E-mailadres</label>
                                     <input type="email" id="inputEmail" name="email" class="form-control mb-2"
-                                        placeholder="E-mailadres" data-error-message="Vul een geldig e-mailadres in"
-                                        required autofocus>
+                                        data-error-message="Vul een geldig e-mailadres in" required>
                                     <label for="inputPassword">Wachtwoord</label>
                                     <input type="password" id="inputPassword" name="wachtwoord"
-                                        class="form-control mb-2" placeholder="Wachtwoord"
-                                        data-error-message="Vul een geldig wachtwoord in" required>
+                                        class="form-control mb-2" data-error-message="Vul een geldig wachtwoord in"
+                                        required>
                                     <button class="btn btn-primary mt-2 col-12" type="submit">Inloggen</button>
                                     <div class="mt-3 mb-5">
                                         @if ($errors->any())
