@@ -7,7 +7,10 @@
 
     <title>Autorijschool DriveSmart</title>
 
-    {{-- CSS --}}
+    {{-- favicon --}}
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
+    
+    {{-- css --}}
     <link rel="stylesheet" href={{ asset('css/app.css') }}>
 
     <!-- Fonts -->
@@ -55,7 +58,8 @@
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
             <img src="{{ asset('images/logo.png') }}" width="5%" />
-            <a class="navbar-brand text-white" href="{{ route('home') }}">DriveSmart</a>
+            <a class="navbar-brand text-white" href="{{ route('home') }}"><span class="brand-text">Drive<span
+                        class="smart-text">Smart</span></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">

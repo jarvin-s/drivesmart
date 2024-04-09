@@ -39,3 +39,16 @@
 :disabled {
     cursor: not-allowed;
 }
+
+.brand-text {
+    background-color: #808000;
+    border-radius: .25rem;
+    padding: 8px 16px;
+    font-size: 20px;
+}
+
+.smart-text {
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
