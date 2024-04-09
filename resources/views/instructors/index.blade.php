@@ -14,8 +14,8 @@
                                 <th class="col-2">Datum</th>
                                 <th class="col-2">Tijdblok</th>
                                 <th class="col-2">Leerling</th>
-                                <th class="col-2">Wijzig</th>
-                                <th class="col-2">Verwijder</th>
+                                <th class="col-2">Inzien</th>
+                                <th class="col-2">Beëindig</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,13 +26,11 @@
                                     <td>{{ \Carbon\Carbon::parse($lessonblock->datum)->format('d-m-Y') }}</td>
                                     <td>{{ $lessonblock->tijdblok }}</td>
                                     <td>{{ $lessonblock->leerling_id }}</td>
-
-                                    <td><a class="edit-btn btn btn-sm" href="">Wijzig</a>
+                                    <td><a class="edit-btn btn btn-sm"
+                                            href="{{ route('lessonblocks.edit', $lessonblock->id) }}">Inzien</a>
                                     </td>
                                     <td>
-                                        <button class="btn btn-danger btn-sm" type="submit" data-bs-toggle="modal"
-                                            data-bs-target="#deleteModal" onclick="">Verwijder</button>
-
+                                        <button class="btn btn-danger btn-sm" type="submit">Beëindig</button>
                                     </td>
                                 </tr>
                             @endforeach

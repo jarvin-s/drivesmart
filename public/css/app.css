@@ -31,3 +31,11 @@
     color: black;
     background-color: rgb(224, 224, 21);
 }
+
+.verslag-label {
+    font-weight: bold;
+}
+
+:disabled {
+    cursor: not-allowed;
+}
