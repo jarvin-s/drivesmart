@@ -21,3 +21,22 @@
     font-size: 28px;
     font-weight: bold;
 }
+
+.login-card {
+    background-color: #fff;
+    padding-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: .25rem;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card label {
+    text-align: left;
+    margin-bottom: 8px;
+    margin-left: 4px;
+}

@@ -26,31 +26,31 @@
 <body class="text-center">
     {{-- 
     <form class="form-signin" method="POST" action="{{ route('checkLogin') }}" data-handle-errors>
-        @csrf
-        <h1 class="h3 mb-3">Inloggen</h1>
-        <label for="inputEmail">E-mailadres</label>
-        <input type="email" id="inputEmail" name="email" class="form-control" placeholder="E-mailadres"
-            data-error-message="Vul een geldig e-mailadres in" required autofocus>
-        <label for="inputPassword">Wachtwoord</label>
-        <input type="password" id="inputPassword" name="wachtwoord" class="form-control" placeholder="Wachtwoord"
-            data-error-message="Vul een geldig wachtwoord in" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Inloggen</button>
-        <div class="mt-3 mb-5">
-            @if ($errors->any())
-                <div class="alert alert-danger" role="alert">
-                    {{ $errors->first('error') }}
-                </div>
-            @endif
+    @csrf
+    <h1 class="h3 mb-3">Inloggen</h1>
+    <label for="inputEmail">E-mailadres</label>
+    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="E-mailadres"
+        data-error-message="Vul een geldig e-mailadres in" required autofocus>
+    <label for="inputPassword">Wachtwoord</label>
+    <input type="password" id="inputPassword" name="wachtwoord" class="form-control" placeholder="Wachtwoord"
+        data-error-message="Vul een geldig wachtwoord in" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Inloggen</button>
+    <div class="mt-3 mb-5">
+        @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            {{ $errors->first('error') }}
         </div>
+        @endif
+    </div>
     </form> --}}
     <div class="container-fluid">
         <div class="row no-gutter">
             <div class="col-md-6 d-none d-md-flex bg-image"></div>
-            <div class="col-md-6 bg-light">
+            <div class="col-md-6 bg-dark">
                 <div class="login d-flex align-items-center py-5">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-10 col-xl-7 mx-auto">
+                            <div class="login-card col-lg-10 col-xl-7 mx-auto">
                                 <form class="form-signin" method="POST" action="{{ route('checkLogin') }}"
                                     data-handle-errors>
                                     @csrf
@@ -58,14 +58,14 @@
                                             <span class="text-white">Drive</span><span
                                                 class="smart-text">Smart</span>!</span></h1>
                                     <label for="inputEmail">E-mailadres</label>
-                                    <input type="email" id="inputEmail" name="email" class="form-control"
+                                    <input type="email" id="inputEmail" name="email" class="form-control mb-2"
                                         placeholder="E-mailadres" data-error-message="Vul een geldig e-mailadres in"
                                         required autofocus>
                                     <label for="inputPassword">Wachtwoord</label>
-                                    <input type="password" id="inputPassword" name="wachtwoord" class="form-control"
-                                        placeholder="Wachtwoord" data-error-message="Vul een geldig wachtwoord in"
-                                        required>
-                                    <button class="btn btn-primary mt-2" type="submit">Inloggen</button>
+                                    <input type="password" id="inputPassword" name="wachtwoord"
+                                        class="form-control mb-2" placeholder="Wachtwoord"
+                                        data-error-message="Vul een geldig wachtwoord in" required>
+                                    <button class="btn btn-primary mt-2 col-12" type="submit">Inloggen</button>
                                     <div class="mt-3 mb-5">
                                         @if ($errors->any())
                                             <div class="alert alert-danger" role="alert">
@@ -76,11 +76,9 @@
                                 </form>
                             </div>
                         </div>
-                    </div><!-- End -->
-
+                    </div>
                 </div>
-            </div><!-- End -->
-
+            </div>
         </div>
     </div>
 
