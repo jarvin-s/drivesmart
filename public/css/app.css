@@ -137,3 +137,9 @@ textarea {
 .home-container {
     max-width: 50vw;
 }
+
+/* Navbar active */
+.navbar-nav>li.active>a {
+    color: #808000 !important;
+    background-color: white;
+}
