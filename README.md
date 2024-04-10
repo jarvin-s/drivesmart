@@ -54,7 +54,14 @@ You can now access the server at http://localhost:8000
 
     php artisan migrate
     php artisan serve
+    
+## Tech Stack
 
+DriveSmart is built with the following technologies:
+
+- [Laravel](https://laravel.com/)
+- [Bootstrap](https://getbootstrap.com/)
+  
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
