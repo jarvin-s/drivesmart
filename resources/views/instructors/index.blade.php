@@ -21,6 +21,10 @@
                         </thead>
                         <tbody>
                             @foreach ($lessonblocks as $lessonblock)
+                                @php
+                                    // Check if lessonblock is active to display status correctly
+                                    $badgeColour = $lessonblock->active == 1 ? 'success' : 'danger';
+                                @endphp
                                 <tr>
                                     <td>{{ $lessonblock->instructor->voornaam }}</td>
                                     <td>{{ $lessonblock->auto_kenteken }}</td>
@@ -29,8 +33,9 @@
                                     <td>{{ $lessonblock->tijdblok }}</td>
                                     <td>{{ $lessonblock->student->voornaam }}</td>
                                     <td>{{ $lessonblock->verslag }}</td>
-                                    <td style="background-color: {{ $lessonblock->active ? 'green' : 'red' }}">
-                                        {{ $lessonblock->active ? 'Ingepland' : 'Afgerond' }}
+                                    <td><span class="badge bg-{{ $badgeColour }}">
+                                            {{ $lessonblock->active ? 'Ingepland' : 'Afgerond' }}
+                                        </span>
                                     </td>
                                     <td><a class="edit-btn btn"
                                             href="{{ route('lessonblocks.edit', $lessonblock->id) }}">Inzien</a>
