@@ -46,6 +46,6 @@ class StripCardController extends Controller
         StripCard::create($request->all());
 
         // Redirect user to instructors index
-        return redirect()->route('instructors.index');
+        return redirect()->route('stripcards.index');
     }
 }
