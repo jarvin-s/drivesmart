@@ -14,8 +14,9 @@
                                 <th class="col-2">Datum</th>
                                 <th class="col-2">Tijdblok</th>
                                 <th class="col-2">Leerling</th>
+                                <th class="col-2">Verslag</th>
+                                <th class="col-2">Status</th>
                                 <th class="col-2">Inzien</th>
-                                <th class="col-2">Beëindig</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -23,14 +24,16 @@
                                 <tr>
                                     <td>{{ $lessonblock->instructor->voornaam }}</td>
                                     <td>{{ $lessonblock->auto_kenteken }}</td>
+                                    {{-- Change date formatting to date-month-Year --}}
                                     <td>{{ \Carbon\Carbon::parse($lessonblock->datum)->format('d-m-Y') }}</td>
                                     <td>{{ $lessonblock->tijdblok }}</td>
-                                    <td>{{ $lessonblock->leerling_id }}</td>
-                                    <td><a class="edit-btn btn btn-sm"
-                                            href="{{ route('lessonblocks.edit', $lessonblock->id) }}">Inzien</a>
+                                    <td>{{ $lessonblock->student->voornaam }}</td>
+                                    <td>{{ $lessonblock->verslag }}</td>
+                                    <td style="background-color: {{ $lessonblock->active ? 'green' : 'red' }}">
+                                        {{ $lessonblock->active ? 'Ingepland' : 'Afgerond' }}
                                     </td>
-                                    <td>
-                                        <button class="btn btn-danger btn-sm" type="submit">Beëindig</button>
+                                    <td><a class="edit-btn btn"
+                                            href="{{ route('lessonblocks.edit', $lessonblock->id) }}">Inzien</a>
                                     </td>
                                 </tr>
                             @endforeach
