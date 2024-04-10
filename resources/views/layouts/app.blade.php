@@ -78,18 +78,6 @@
                             <a class="nav-link text-white" href="{{ route('stripcards.index') }}">Strippenkaarten</a>
                         </li>
                     @endif
-                    {{-- <li class="nav-item dropdown">
-                        <a class="nav-link text-white dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                            href="#">Instructeur</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('instructors.index') }}">Instructeur</a></li>
-                            <li><a class="dropdown-item" href="#">Strippenkaarten</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{ route('contact') }}">Contact</a>
                     </li>

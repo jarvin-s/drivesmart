@@ -9,6 +9,7 @@ class ContactController extends Controller
 {
     public function store(Request $request)
     {
+        // Validate incoming data
         $request->validate([
             'naam',
             'email',
@@ -16,8 +17,10 @@ class ContactController extends Controller
             'bericht'
         ]);
 
+        // Insert validated data
         Contact::create($request->all());
 
+        // Redirect user to contact with success message
         return redirect()->route('contact')->with('message', 'Uw bericht is verstuurd!');
     }
 }

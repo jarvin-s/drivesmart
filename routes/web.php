@@ -21,8 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/contact', ContactController::class . '@store')->name('contact.store');
 
     // Instructor routes
-    // Route::group(['middleware' => ['rol:eigenaar', 'rol:medewerker']], function () {
-    Route::middleware(['rol:medewerker'])->group(function () {
+    Route::middleware(['rol:medewerker' || 'rol:eigenaar'])->group(function () {
         Route::group(['prefix' => 'instructors'], function () {
             Route::get('/', LessonBlockController::class . '@index')->name('instructors.index');
             Route::get('/stripcards/create', StripCardController::class . '@create')->name('stripcards.create');
