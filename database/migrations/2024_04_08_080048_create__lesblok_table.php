@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('lesblok', function (Blueprint $table) {
             $table->integer('id', true)->primary()->unsigned();
             $table->integer('instructeur_id')->unsigned();
-            $table->foreign('instructeur_id')->references('id')->on('Instructeur')->onDelete('cascade');
+            $table->foreign('instructeur_id')->references('id')->on('instructeur')->onDelete('cascade');
             $table->integer('auto_id')->unsigned();
             $table->foreign('auto_id')->references('id')->on('Auto')->onDelete('cascade');
             $table->string('auto_kenteken', 6);

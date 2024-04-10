@@ -17,7 +17,7 @@ class StripCard extends Model
         'resterende_lessen'
     ];
 
-    public function studentId()
+    public function student()
     {
         return $this->belongsTo(Student::class, 'student_id');
     }

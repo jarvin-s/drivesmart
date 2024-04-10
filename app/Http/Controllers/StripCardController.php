@@ -13,8 +13,10 @@ class StripCardController extends Controller
      */
     public function index()
     {
-        $stripcards = StripCard::wth('leerling')->get();
-        return view('instructors.stripcards.create', compact('stripcards'));
+        // Get all stripcards with student data (relation)
+        $stripcards = StripCard::with('student')->get();
+        // Show index view
+        return view('instructors.stripcards.index', compact('stripcards'));
     }
 
     /**
@@ -22,7 +24,9 @@ class StripCardController extends Controller
      */
     public function create()
     {
+        // Get all student data
         $students = Student::all();
+        // Show create view with student as parameter data
         return view('instructors.stripcards.create', compact('students'));
     }
 
@@ -31,46 +35,17 @@ class StripCardController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate incoming data
         $request->validate([
             'student_id',
             'aantal_lessen',
             'resterende_lessen'
         ]);
 
+        // Insert validated data
         StripCard::create($request->all());
 
-        return redirect()->route('instructors.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        // Redirect user to instructors index
+        return redirect()->route('stripcards.index');
     }
 }
