@@ -50,7 +50,15 @@
 
                 <div class="col-12 mb-3">
                     <label for="verslag" class="verslag-label form-label">Verslag/opmerkingen*</label>
-                    <textarea name="verslag" class="form-control" placeholder="Schrijf hier uw verslag." required></textarea>
+                    <textarea name="verslag" class="form-control" placeholder="Schrijf hier uw verslag." required>{{ $lessonblock->verslag }}</textarea>
+                </div>
+
+                <div class="col-12 mb-3">
+                    <label for="status" class="status-label form-label">Status</label>
+                    @php
+                        $badgeColour = $lessonblock->active == 1 ? 'success' : 'danger';
+                    @endphp
+                    <span style="max-width: 72px;" class="form-control bg-{{ $badgeColour }}">{{ $lessonblock->active ? 'Ingepland' : 'Afgerond' }}</span>
                 </div>
 
                 <div class="col">
@@ -63,7 +71,9 @@
             <form action="{{ route('lessonblocks.endLesson', $lessonblock->id) }}" method="post">
                 @csrf
                 @method('PUT')
-                <button class="btn btn-danger mt-2 col-12" type="submit">Beëindig</button>
+                @if ($lessonblock->active == 1)
+                    <button class="btn btn-danger mt-2 col-12" type="submit">Beëindig</button>
+                @endif
             </form>
         </div>
     </div>
