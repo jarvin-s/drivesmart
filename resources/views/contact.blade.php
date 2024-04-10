@@ -21,10 +21,10 @@
                         oninvalid="this.setCustomValidity('Vul een geldig e-mailadres in.')" oninput="setCustomValidity('')"
                         required>
                     <input type="text" class="form-control mb-4" name="telefoon" pattern="^[0-9]{10}$"
-                        placeholder="Telefoonnummer"
+                        placeholder="Telefoonnummer*"
                         oninvalid="this.setCustomValidity('Vul een geldig telefoonnummer in. (10 cijferig nummer)')"
                         oninput="setCustomValidity('')" required>
-                    <textarea placeholder="Bericht" name="bericht" class="field" required></textarea>
+                    <textarea placeholder="Bericht*" name="bericht" class="field" required></textarea>
                     <button class="btn btn-primary col-lg-12" type="submit">Versturen</button>
                     @if (session('message'))
                         <div class="alert alert-success mt-2">{{ session('message') }}</div>
