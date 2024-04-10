@@ -21,7 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/contact', ContactController::class . '@store')->name('contact.store');
 
     // Instructor routes
-    Route::middleware(['rol:medewerker' || 'rol:eigenaar'])->group(function () {
+    Route::middleware(['rol:medewerker'])->group(function () {
         Route::group(['prefix' => 'instructors'], function () {
             Route::get('/', LessonBlockController::class . '@index')->name('instructors.index');
             Route::get('/stripcards/create', StripCardController::class . '@create')->name('stripcards.create');
@@ -36,7 +36,6 @@ Route::middleware(['auth'])->group(function () {
 
 // Login view
 Route::get('/', [AuthController::class, 'index'])->name('login');
-// TODO: if user is logged in, redirect back to application
 Route::post('/logout', [AuthController::class, 'logOut'])->name('logout');
 
 // Login function (POST)

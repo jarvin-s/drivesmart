@@ -53,8 +53,8 @@ class LessonBlockController extends Controller
 
     public function endLesson(Request $request, $id)
     {
-        // Get stripcard with ID that was clicked and change first row of resterende_lessen where the value is NOT null
-        $stripcard = StripCard::findOrFail($id)->whereNotNull('resterende_lessen')->first();
+        // Get stripcard with ID that was clicked
+        $stripcard = StripCard::findOrFail($id);
 
         // Subtract 1 from resterende_lessen
         $stripcard->resterende_lessen -= 1;
