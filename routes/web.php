@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 // Protected routes
 Route::middleware(['auth'])->group(function () {
     // Home page route
-    Route::get('/', function () {
+    Route::get('/home', function () {
         return view('home');
     })->name('home');
 
@@ -17,22 +17,23 @@ Route::middleware(['auth'])->group(function () {
         return view('contact');
     })->name('contact');
 
-    // ! Role check, can't find 'rol'
-    Route::middleware(['role:eigenaar,medewerker'])->group(function () {
-        // Instructor routes
+    // Instructor routes
+    // Route::group(['middleware' => ['rol:eigenaar', 'rol:medewerker']], function () {
+    Route::middleware(['rol:medewerker'])->group(function () {
         Route::group(['prefix' => 'instructors'], function () {
             Route::get('/', LessonBlockController::class . '@index')->name('instructors.index');
             Route::get('/stripcards/create', StripCardController::class . '@create')->name('stripcards.create');
             Route::get('/stripcards', StripCardController::class . '@index')->name('stripcards.index');
             Route::post('/stripcards', StripCardController::class . '@store')->name('stripcards.store');
             Route::get('/{lessonblock}/edit', LessonBlockController::class . '@edit')->name('lessonblocks.edit');
-            Route::put('/{lessonblock}', LessonBlockController::class . '@update')->name('lessonblocks.update');
+            Route::put('/{lessonblock}/update', LessonBlockController::class . '@update')->name('lessonblocks.update');
+            Route::put('/{lessonblock}/endLesson', LessonBlockController::class . '@endLesson')->name('lessonblocks.endLesson');
         });
     });
 });
 
 // Login view
-Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/', [AuthController::class, 'index'])->name('login');
 // TODO: if user is logged in, redirect back to application
 Route::post('/logout', [AuthController::class, 'logOut'])->name('logout');
 
