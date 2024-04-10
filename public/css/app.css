@@ -90,13 +90,13 @@
     border: solid #0D6EFD 2px;
 }
 
-.right {
+.left {
     background: url('https://rijschool-kernpunt.nl/wp-content/uploads/2021/08/Lessen-bij-rijschool-Kernpunt-Zwolle.jpg') no-repeat center;
     background-size: cover;
     height: 100%;
 }
 
-.left {
+.right {
     padding: 25px 40px;
 }
 
@@ -129,7 +129,7 @@ textarea {
         grid-template-columns: 1fr;
     }
 
-    .right {
+    .left {
         height: 200px;
     }
 }

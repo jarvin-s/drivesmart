@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LessonBlockController;
 use App\Http\Controllers\StripCardController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/contact', function () {
         return view('contact');
     })->name('contact');
+
+    Route::post('/contact', ContactController::class . '@store')->name('contact.store');
 
     // Instructor routes
     // Route::group(['middleware' => ['rol:eigenaar', 'rol:medewerker']], function () {
