@@ -19,7 +19,8 @@
                     <label for="car" class="form-label">Auto</label>
                     <div class="input-group">
                         <input name="auto_id" type="text" class="form-control input-effect" id="car"
-                            value="Merk: {{ $lessonblock->car->merk }} - Kenteken: {{ $lessonblock->car->kenteken }}" disabled>
+                            value="Merk: {{ $lessonblock->car->merk }} - Kenteken: {{ $lessonblock->car->kenteken }}"
+                            disabled>
                     </div>
                 </div>
 
@@ -53,13 +54,18 @@
                 </div>
 
                 <div class="col">
-                    <button class="btn btn-primary mt-2 col-12" oninvalid="this.setCustomValidity('Dit veld is verplicht.')" type="submit">Verslag opslaan</button>
+                    <button class="btn btn-primary mt-2 col-12" oninvalid="this.setCustomValidity('Dit veld is verplicht.')"
+                        type="submit">Verslag opslaan</button>
                 </div>
-
-                <div class="col">
-                    <button class="btn btn-danger mt-2 col-12" type="button">Beëindig</button>
-                </div>
-            </div>
         </form>
+
+        <div class="col">
+            <form action="{{ route('lessonblocks.endLesson', $lessonblock->id) }}" method="post">
+                @csrf
+                @method('PUT')
+                <button class="btn btn-danger mt-2 col-12" type="submit">Beëindig</button>
+            </form>
+        </div>
+    </div>
     </div>
 @endsection
