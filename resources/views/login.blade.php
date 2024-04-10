@@ -35,10 +35,9 @@
                                 <form class="form-signin" method="POST" action="{{ route('checkLogin') }}"
                                     data-handle-errors>
                                     @csrf
-                                    <h1 class="h3 mb-3">Welkom bij Rijschool <span class="brand-text">
+                                    <h1 class="h3 mb-4">Welkom bij Rijschool <span class="brand-text">
                                             <span class="text-white">Drive</span><span
                                                 class="smart-text">Smart</span>!</span></h1>
-                                    <p>U kunt zich hieronder inloggen.</p>
                                     <label for="inputEmail">E-mailadres</label>
                                     <input type="email" id="inputEmail" name="email" class="form-control mb-2"
                                         data-error-message="Vul een geldig e-mailadres in" required>
