@@ -14,11 +14,17 @@
                 <hr>
                 <form action="{{ route('contact.store') }}" method="post">
                     @csrf
-                    <input type="text" class="form-control mb-4" name="naam" placeholder="Uw naam*" required>
-                    <input type="email" class="form-control mb-4" name="email" placeholder="Uw e-mailadres*" required>
+                    <input type="text" class="form-control mb-4" name="naam" placeholder="Uw naam*"
+                        pattern="^[A-Za-z]+$" oninvalid="this.setCustomValidity('Vul een geldige naam in.')"
+                        oninput="setCustomValidity('')" required>
+                    <input type="email" class="form-control mb-4" name="email" placeholder="Uw e-mailadres*"
+                        oninvalid="this.setCustomValidity('Vul een geldig e-mailadres in.')" oninput="setCustomValidity('')"
+                        required>
                     <input type="text" class="form-control mb-4" name="telefoon" pattern="^[0-9]{10}$"
-                        placeholder="Telefoonnummer">
-                    <textarea placeholder="Bericht" name="bericht" class="field"></textarea>
+                        placeholder="Telefoonnummer"
+                        oninvalid="this.setCustomValidity('Vul een geldig telefoonnummer in. (10 cijferig nummer)')"
+                        oninput="setCustomValidity('')" required>
+                    <textarea placeholder="Bericht" name="bericht" class="field" required></textarea>
                     <button class="btn btn-primary col-lg-12" type="submit">Versturen</button>
                     @if (session('message'))
                         <div class="alert alert-success mt-2">{{ session('message') }}</div>

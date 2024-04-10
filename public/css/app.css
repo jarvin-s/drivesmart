@@ -3,7 +3,6 @@
     font-size: 12px;
 }
 
-
 /* Logout button */
 
 .logout {
@@ -132,4 +131,9 @@ textarea {
     .left {
         height: 200px;
     }
+}
+
+/* Home container */
+.home-container {
+    max-width: 50vw;
 }
